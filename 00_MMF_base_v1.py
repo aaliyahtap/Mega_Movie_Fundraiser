@@ -4,17 +4,6 @@
 
 #functions go here
 
-#*********Main Routine*********
-
-
-
-#set up dictionaries / lists needed to hold data
-
-
-#ask user if they have used the program
-
-
-#loop to get ticket details
 
 #checks that ticket name is not blank
 def not_blank(question):
@@ -29,11 +18,23 @@ def not_blank(question):
         #if name is blank, show error(and repeat loop)
         else:
             print("Sorry, this can't be blank, "
-                  "please enter your name")
+                  "please enter your name.")
 
-#Main routine goes here
 
-name = not_blank("Name: ")
+
+
+#*********Main Routine*********
+
+
+
+#set up dictionaries / lists needed to hold data
+
+
+#ask user if they have used the program
+
+
+#loop to get ticket details
+
 name = ""
 count = 0
 
@@ -41,20 +42,27 @@ MAX_TICKETS = 5
 
 
 while name != "xxx" and count < MAX_TICKETS:
-
-    print("You have {} seats "
-    "left".format(MAX_TICKETS - count))
+    
+    #shows the user how many seats are left
+    if count < 4:
+        print("You have {} seats "
+        "left".format(MAX_TICKETS - count))
+        
+    #this will show the user that there is one seat left.
+    else:
+        print("There is ONE seat left!")
 
 
     #Get details
-    name = input("Name: ")
+    name = not_blank("Name: ")
     count += 1
     print()
 
 
 if count == MAX_TICKETS:
     print("You have sold all the available tickets!")
-
+    
+#shows the user how many tickets are sold and how many are left
 else:
     print("""You have sold {} tickets.
 There are {} places still available"""
@@ -62,7 +70,10 @@ There are {} places still available"""
 
 
 
-    
+#checks that ticket name is not blank
+
+
+
 
 
 
